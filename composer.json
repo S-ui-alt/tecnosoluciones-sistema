@@ -1,0 +1,23 @@
+{
+  "name": "tecnosoluciones/sistema-gestion",
+  "description": "Sistema de Gestion de Proyectos y Clientes para TecnoSoluciones S.A.",
+  "type": "project",
+  "require": {
+    "php": ">=8.1",
+    "setasign/fpdf": "^1.9"
+  },
+  "autoload": {
+    "classmap": [
+      "app/models/",
+      "app/controllers/",
+      "app/config/"
+    ]
+  },
+  "authors": [
+    {
+      "name": "TecnoSoluciones S.A. - Equipo de Desarrollo",
+      "email": "dev@tecnosoluciones.com"
+    }
+  ],
+  "minimum-stability": "stable"
+}
