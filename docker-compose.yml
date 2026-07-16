@@ -22,7 +22,7 @@ services:
     
 
   # ============================================
-  # Servicio MariaDB (reemplaza MySQL)
+  # Servicio MariaDB
   # ============================================
   mariadb:
     image: mariadb:11.4
@@ -43,8 +43,7 @@ services:
       - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql
     networks:
       - tecno-network
-    # MariaDB es compatible con mysql_native_password
-    command: >
+    command: 
       mariadbd
       --default-authentication-plugin=mysql_native_password
       --character-set-server=utf8mb4
