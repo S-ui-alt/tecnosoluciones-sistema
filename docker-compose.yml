@@ -4,7 +4,9 @@ services:
   # Servicio PHP + Apache
   # ============================================
   php-apache:
-    image: php:8.2-apache
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: tecnosoluciones-php
     restart: unless-stopped
     ports:
