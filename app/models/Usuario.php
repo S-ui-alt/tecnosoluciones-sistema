@@ -21,7 +21,7 @@ class Usuario
     {
         $hash = password_hash($contrasena, PASSWORD_BCRYPT);
         $stmt = $this->db->prepare("INSERT INTO {$this->table} (nombre, email, contrasena) VALUES (?, ?, ?)");
-        return $stmt->execute([$nombre, $email,$contrasena]);
+        return $stmt->execute([$nombre, $email, $hash]);
     }
 
     public function login(string $email, string $contrasena): ?array
