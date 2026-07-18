@@ -9,7 +9,7 @@ class Usuario
 
     public string $nombre;
     public string $email;
-    public string $contraseña;
+    public string $contrasena;
     public string $rol;
 
     public function __construct()
@@ -17,20 +17,20 @@ class Usuario
         $this->db = Database::getConnection();
     }
 
-    public function registrar(string $nombre, string $email, string $contraseña): bool
+    public function registrar(string $nombre, string $email, string $contrasena): bool
     {
         $hash = password_hash($contraseña, PASSWORD_BCRYPT);
-        $stmt = $this->db->prepare("INSERT INTO {$this->table} (nombre, email, contraseña) VALUES (?, ?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO {$this->table} (nombre, email, contrasena) VALUES (?, ?, ?)");
         return $stmt->execute([$nombre, $email,$contraseña]);
     }
 
-    public function login(string $email, string $contraseña): ?array
+    public function login(string $email, string $contrasena): ?array
     {
         $stmt = $this->db->prepare("SELECT * FROM {$this->table} WHERE email = ? LIMIT 1");
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($contraseña, $user['contraseña'])) {
+        if ($user && password_verify($contrasena, $user['contrasena'])) {
             return $user;
         }
         return null;
