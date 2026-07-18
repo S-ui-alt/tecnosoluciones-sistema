@@ -19,7 +19,7 @@ class Usuario
 
     public function registrar(string $nombre, string $email, string $contrasena): bool
     {
-        $hash = password_hash($contraseña, PASSWORD_BCRYPT);
+        $hash = password_hash($contrasena, PASSWORD_BCRYPT);
         $stmt = $this->db->prepare("INSERT INTO {$this->table} (nombre, email, contrasena) VALUES (?, ?, ?)");
         return $stmt->execute([$nombre, $email,$contraseña]);
     }
