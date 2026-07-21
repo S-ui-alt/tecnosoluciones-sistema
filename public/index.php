@@ -2,7 +2,6 @@
 
 session_start();
 
-// Configuración de errores (desactivar en producción)
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -15,7 +14,7 @@ spl_autoload_register(function ($class) {
     $paths = [
         APP_PATH . '/controllers/' . $class . '.php',
         APP_PATH . '/models/' . $class . '.php',
-        APP_PATH . '/confg/' . $class . '.php'
+        APP_PATH . '/config/' . $class . '.php'
     ];
 
     foreach ($paths as $path) {
