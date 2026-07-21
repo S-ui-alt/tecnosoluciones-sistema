@@ -19,6 +19,13 @@ class Cliente
         $this->db = Database::getConnection();
     }
 
+    public function ObtenerPorId($id)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM clientes WHERE id = :id");
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function listarTodos()
     {
         try {
