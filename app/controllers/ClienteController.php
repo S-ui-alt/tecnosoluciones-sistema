@@ -48,7 +48,7 @@ class ClienteController
         }
     }
 
-    public function editar()
+    public function edit()
     {
         $id = $_GET['id'] ?? null;
         $cliente = $this->clienteModel->obtenerPorId((int)$id);
