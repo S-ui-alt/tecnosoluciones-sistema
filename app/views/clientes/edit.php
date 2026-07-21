@@ -4,7 +4,7 @@
     <div class="col-md-8">
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h4 class="mb-0"><i class="bi bi-person-plus me-2"></i>Nuevo Cliente</h4>
+                <h4 class="mb-0"><i class="bi bi-person-plus me-2"></i>Editar Cliente</h4>
             </div>
             <div class="card-body p-4">
                 <form method="POST" action="index.php?controller=cliente&action=store">
